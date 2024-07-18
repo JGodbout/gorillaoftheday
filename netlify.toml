@@ -1,0 +1,12 @@
+[
+build
+]
+  functions = "functions"
+
+[[
+redirects
+]]
+  from = "/daily-image.jpg"
+  to = "/.netlify/functions/redirect-image"
+  status = 200
+  force = true
