@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
   } catch (error) {
     return {
       statusCode: 404,
-      body: 'Image not found',
+      body: `Image not found: ${imagePath}`,
     };
   }
 };
