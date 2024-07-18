@@ -1,7 +1,5 @@
 [build]
   functions = "functions"
-  publish = "."
-  included_files = [./images/**]
 
 [[redirects]]
   from = "/image.jpg"
