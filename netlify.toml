@@ -1,11 +1,7 @@
-[
-build
-]
+[build]
   functions = "functions"
 
-[[
-redirects
-]]
+[[redirects]]
   from = "/daily-image.jpg"
   to = "/.netlify/functions/redirect-image"
   status = 200
