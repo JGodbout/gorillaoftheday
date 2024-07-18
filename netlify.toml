@@ -3,5 +3,5 @@
 
 [[redirects]]
   from = "/image.jpg"
-  to = "/.netlify/functions/image"
+  to = "/functions/image"
   status = 200
