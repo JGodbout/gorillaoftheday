@@ -3,6 +3,6 @@
 
 [[redirects]]
   from = "/daily-image.jpg"
-  to = "/.netlify/functions/redirect-image"
+  to = "/functions/redirect-image"
   status = 200
   force = true
