@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/image.jpg",
+      "destination": "/api/image"
+    }
+  ]
+}

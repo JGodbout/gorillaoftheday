@@ -1,3 +1,6 @@
+const path = require('path');
+const fs = require('fs');
+
 export default function handler(req, res) {
   const startDate = new Date('2024-07-18');
   const currentDate = new Date();
@@ -5,11 +8,13 @@ export default function handler(req, res) {
   const daysSinceStart = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
   const imageName = `${daysSinceStart}.jpg`;
 
-  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-  const imageUrl = `${baseUrl}/images/${imageName}`;
+  const imagePath = path.join(process.cwd(), 'public', 'images', imageName);
 
-  res.writeHead(302, {
-    Location: imageUrl,
-  });
-  res.end();
+  try {
+    const imageBuffer = fs.readFileSync(imagePath);
+    res.setHeader('Content-Type', 'image/jpeg');
+    res.send(imageBuffer);
+  } catch (error) {
+    res.status(404).send('Image not found');
+  }
 }
