@@ -8,8 +8,8 @@ exports.handler = async (event, context) => {
   const daysSinceStart = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
   const imageName = `${daysSinceStart}.jpg`;
 
-  const imagePath = path.resolve(__dirname, '../images', imageName);
-  
+  const imagePath = path.join(process.cwd(), 'images', imageName);
+
   try {
     const imageBuffer = fs.readFileSync(imagePath);
     
