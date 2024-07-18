@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Image</title>
+    <script>
+        function updateImageSrc() {
+            const startDate = new Date('2024-07-18');
+            const today = new Date();
+            const daysSinceStart = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+            const img = document.querySelector('img');
+            img.src = `image_${daysSinceStart}.jpg`;
+        }
+    </script>
+</head>
+<body onload="updateImageSrc()">
+    <img alt="Daily Image">
+</body>
+</html>
